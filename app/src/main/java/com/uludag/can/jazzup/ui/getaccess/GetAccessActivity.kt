@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.uludag.can.jazzup.R
 import com.uludag.can.jazzup.base.App
-import com.uludag.can.jazzup.networking.ApiService
 import kotlinx.android.synthetic.main.activity_login.*
 import javax.inject.Inject
 
@@ -15,16 +14,21 @@ class GetAccessActivity : AppCompatActivity(), GetAccessContract.View {
 
     private val tag = GetAccessActivity::class.java.simpleName
 
-    @Inject lateinit var apiService: ApiService
+    @Inject
+    lateinit var presenter: GetAccessContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        (application as App).appComponent.inject(this)
-
         setContentView(R.layout.activity_login)
-        setWhiteStatusBar(mainBackground)
+        (application as App).appComponent.inject(this)
+        this.presenter.setView(this)
 
+        setWhiteStatusBar(mainBackground)
+        setClickListeners()
+    }
+
+    private fun setClickListeners() {
+        getAccessBtn.setOnClickListener { this.presenter.onGetAccessClicked() }
     }
 
     private fun setWhiteStatusBar(view: View) {
@@ -34,5 +38,19 @@ class GetAccessActivity : AppCompatActivity(), GetAccessContract.View {
             view.systemUiVisibility = flags
             window.statusBarColor = Color.WHITE
         }
+    }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        this.presenter.loadData()
+    }
+
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        this.presenter.onDestroy()
     }
 }

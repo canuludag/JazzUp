@@ -19,6 +19,7 @@ android {
     buildTypes {
         release {
             buildConfigField "String", "BASE_API_URL", "\"https://api.spotify.com/v1/\""
+            buildConfigField "String", "GET_TOKEN_URL", "\"https://accounts.spotify.com/api/token\""
             buildConfigField "String", "CLIENT_ID", keyProperties['CLIENT_ID']
             buildConfigField "String", "CLIENT_SECRET", keyProperties['CLIENT_SECRET']
             minifyEnabled true
@@ -27,6 +28,7 @@ android {
         }
         debug {
             buildConfigField "String", "BASE_API_URL", "\"https://api.spotify.com/v1/\""
+            buildConfigField "String", "GET_TOKEN_URL", "\"https://accounts.spotify.com/api/token\""
             buildConfigField "String", "CLIENT_ID", keyProperties['CLIENT_ID']
             buildConfigField "String", "CLIENT_SECRET", keyProperties['CLIENT_SECRET']
             minifyEnabled false
