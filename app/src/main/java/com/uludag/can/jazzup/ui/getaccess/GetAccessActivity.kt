@@ -11,7 +11,7 @@ import com.uludag.can.jazzup.networking.ApiService
 import kotlinx.android.synthetic.main.activity_login.*
 import javax.inject.Inject
 
-class GetAccessActivity : AppCompatActivity() {
+class GetAccessActivity : AppCompatActivity(), GetAccessContract.View {
 
     private val tag = GetAccessActivity::class.java.simpleName
 
