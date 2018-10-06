@@ -2,6 +2,10 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+def keyPropertiesFile = rootProject.file("key.properties")
+def keyProperties = new Properties()
+keyProperties.load(new FileInputStream(keyPropertiesFile))
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -14,9 +18,26 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            buildConfigField "String", "BASE_API_URL", "\"https://api.spotify.com/v1/\""
+            buildConfigField "String", "CLIENT_ID", keyProperties['CLIENT_ID']
+            buildConfigField "String", "CLIENT_SECRET", keyProperties['CLIENT_SECRET']
+            minifyEnabled true
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            buildConfigField "String", "BASE_API_URL", "\"https://api.spotify.com/v1/\""
+            buildConfigField "String", "CLIENT_ID", keyProperties['CLIENT_ID']
+            buildConfigField "String", "CLIENT_SECRET", keyProperties['CLIENT_SECRET']
+            minifyEnabled false
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -49,6 +70,7 @@ dependencies {
 
     // RxJava-RxAndroid
     implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
 
     // Object serialization
     implementation "com.google.code.gson:gson:$gsonVersion"
