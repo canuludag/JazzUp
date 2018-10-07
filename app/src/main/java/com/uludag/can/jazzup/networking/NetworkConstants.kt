@@ -4,6 +4,7 @@ import android.util.Base64
 import com.uludag.can.jazzup.BuildConfig
 
 object NetworkConstants {
-    private val credentials = BuildConfig.CLIENT_ID + ":" + BuildConfig.CLIENT_SECRET
-    val basicAuthCredential = Base64.encodeToString(credentials.toByteArray(), Base64.NO_WRAP)
+    private const val credentials = BuildConfig.CLIENT_ID + ":" + BuildConfig.CLIENT_SECRET
+    val tokenEndpoint = BuildConfig.GET_TOKEN_URL
+    val basicAuthCredential: String = Base64.encodeToString(credentials.toByteArray(), Base64.NO_WRAP)
 }
