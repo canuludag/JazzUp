@@ -15,6 +15,6 @@ class GetAccessModule {
             GetAccessContract.Presenter = GetAccessPresenter(model, sharedPreferences)
 
     @Provides
-    fun provideRepository(apiService: ApiService): GetAccessContract.Model = Repository(apiService)
+    fun provideRepository(apiService: ApiService): GetAccessContract.Model = GetAccessRepository(apiService)
 
 }

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary">
+
+    <android.support.design.chip.Chip
+        android:id="@+id/playlistTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/product_sans_family"
+        android:gravity="center"
+        android:outlineAmbientShadowColor="@color/playlistItemShadowColor"
+        android:outlineSpotShadowColor="@color/playlistItemShadowColor"
+        android:shadowColor="@color/playlistItemShadowColor"
+        android:text="Jazz Classics"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:chipIcon="@drawable/ic_spotify_chip"
+        app:chipIconVisible="true"
+        app:chipStrokeColor="@color/colorAccent"
+        app:chipStrokeWidth="0.8dp"
+        app:layout_constraintBottom_toTopOf="@+id/materialCardView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.design.card.MaterialCardView
+        android:id="@+id/materialCardView2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:outlineAmbientShadowColor="@color/shadowColor"
+        android:outlineSpotShadowColor="@color/shadowColor"
+        android:shadowColor="@color/shadowColor"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/shadowColor"
+        app:strokeWidth="0.5dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/sample_jazz_cover" />
+
+            <TextView
+                android:id="@+id/playlistDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/product_sans_family"
+                android:text="Celebrating the 50th birthday of MPS with a selection from their classic catalogue. Cover: Oscar Peterson"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/playlistCreatedBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/product_sans_family"
+                android:text="Created by Spotify"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/btnPlayPlaylist"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:elevation="5dp"
+                android:fontFamily="@font/product_sans_family"
+                android:outlineAmbientShadowColor="@color/accentTextColor"
+                android:outlineSpotShadowColor="@color/accentTextColor"
+                android:shadowColor="@color/accentTextColor"
+                android:text="PLAY"
+                android:textColor="@color/accentTextColor"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:chipStrokeColor="@color/colorAccent"
+                app:chipStrokeWidth="0.8dp"
+                app:cornerRadius="20dp"
+                app:icon="@drawable/ic_play_24dp"
+                app:iconGravity="start"
+                app:iconPadding="3dp"
+                app:iconTint="@color/accentTextColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:rippleColor="@color/colorPrimary" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.design.card.MaterialCardView>
+
+</android.support.constraint.ConstraintLayout>
+

@@ -12,12 +12,12 @@ import javax.inject.Inject;
 
 import io.reactivex.Single;
 
-public class Repository implements GetAccessContract.Model {
+public class GetAccessRepository implements GetAccessContract.Model {
 
     private ApiService apiService;
 
     @Inject
-    Repository(ApiService apiService) {
+    GetAccessRepository(ApiService apiService) {
         this.apiService = apiService;
     }
 

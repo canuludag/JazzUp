@@ -14,7 +14,7 @@ interface GetAccessContract {
         fun onCreate()
         fun onDestroy()
         fun loadData()
-        fun setView(view: GetAccessContract.View)
+        fun setView(view: View)
         fun onGetAccessClicked()
     }
 

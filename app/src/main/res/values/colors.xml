@@ -6,4 +6,5 @@
     <color name="colorAccentLight">#ffe9e3</color>
     <color name="accentTextColor">#53383a</color>
     <color name="shadowColor">#ff8762</color>
+    <color name="playlistItemShadowColor">#c7451c</color>
 </resources>
