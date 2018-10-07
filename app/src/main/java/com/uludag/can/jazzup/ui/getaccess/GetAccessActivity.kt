@@ -1,13 +1,17 @@
 package com.uludag.can.jazzup.ui.getaccess
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import com.uludag.can.jazzup.R
 import com.uludag.can.jazzup.base.App
-import kotlinx.android.synthetic.main.activity_login.*
+import com.uludag.can.jazzup.ui.jazzplaylists.JazzPlaylistsActivity
+import kotlinx.android.synthetic.main.activity_get_access.*
 import javax.inject.Inject
 
 class GetAccessActivity : AppCompatActivity(), GetAccessContract.View {
@@ -19,12 +23,17 @@ class GetAccessActivity : AppCompatActivity(), GetAccessContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_get_access)
         (application as App).appComponent.inject(this)
-        this.presenter.setView(this)
+        setupPresenter()
 
         setWhiteStatusBar(mainBackground)
         setClickListeners()
+    }
+
+    private fun setupPresenter() {
+        this.presenter.setView(this)
+        this.presenter.onCreate()
     }
 
     private fun setClickListeners() {
@@ -40,13 +49,25 @@ class GetAccessActivity : AppCompatActivity(), GetAccessContract.View {
         }
     }
 
+    override fun showPlaylistsScreen() {
+        val intent = Intent(this, JazzPlaylistsActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    override fun showLoading() {
+        this.getAccessBtn.visibility = GONE
+        this.progressBar.visibility = VISIBLE
+    }
+
+    override fun hideLoading() {
+        this.getAccessBtn.visibility = VISIBLE
+        this.progressBar.visibility = GONE
+    }
+
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         this.presenter.loadData()
-    }
-
-    override fun onDetachedFromWindow() {
-        super.onDetachedFromWindow()
     }
 
     override fun onDestroy() {

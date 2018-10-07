@@ -5,7 +5,9 @@ import io.reactivex.Single
 
 interface GetAccessContract {
     interface View {
-
+        fun showPlaylistsScreen()
+        fun showLoading()
+        fun hideLoading()
     }
 
     interface Presenter {

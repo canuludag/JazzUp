@@ -2,5 +2,5 @@
     <string name="app_name">Jazzup</string>
     <string name="get_access_welcome_title">Hi,\nwelcome to Jazzup.</string>
     <string name="get_access_btn">Get Access</string>
-    <string name="get_access_welcome_detail_text">This app will list you all the Jazz playlists on Spotify. You can browse quickly and listen any playlist via Spotify.</string>
+    <string name="get_access_welcome_detail_text">In order to use the app, you need to get access from Spotify. After that you can browse quickly and listen any playlist via Spotify.</string>
 </resources>
