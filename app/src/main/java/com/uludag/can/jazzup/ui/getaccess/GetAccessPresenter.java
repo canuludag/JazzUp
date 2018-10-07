@@ -18,11 +18,10 @@ import io.reactivex.schedulers.Schedulers;
 public class GetAccessPresenter implements GetAccessContract.Presenter {
 
     private static final String TAG = GetAccessPresenter.class.getSimpleName();
-    private GetAccessContract.View view;
-    private GetAccessContract.Model model;
     private CompositeDisposable compositeDisposable;
-
-    SharedPreferences prefs;
+    public GetAccessContract.View view;
+    public GetAccessContract.Model model;
+    public SharedPreferences prefs;
 
     @Inject
     public GetAccessPresenter(GetAccessContract.Model model, SharedPreferences prefs) {
