@@ -1,12 +1,12 @@
 Jazzup
 --------------------
-Java+Kotlin/MVP Architecture/Dagger2/RxJava2/Mockito/Material Components
+Tech Stack: Java+Kotlin/MVP Architecture/Dagger2/RxJava2/Mockito/Material Components
 
 Demo
 ----
 ![](./art/art_demo_1.png) ![](./art/art_demo_2.png) 
 
-![](./art/art_demo_3.png)
+![](./art/art_demo_3.png) ![](./art/art_demo_4.png)
 
 Developed By
 ---------------
