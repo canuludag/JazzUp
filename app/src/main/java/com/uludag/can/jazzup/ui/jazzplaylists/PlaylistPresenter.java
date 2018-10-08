@@ -1,5 +1,8 @@
 package com.uludag.can.jazzup.ui.jazzplaylists;
 
+import android.text.Html;
+import android.text.Spanned;
+
 import com.uludag.can.jazzup.models.PlaylistCellItem;
 
 public class PlaylistPresenter {
@@ -32,11 +35,14 @@ public class PlaylistPresenter {
     }
 
     private void loadDescription() {
-        this.playlistView.showDescription(this.playlistCellItem.getDescription());
+        Spanned sp = Html.fromHtml(this.playlistCellItem.getDescription());
+        this.playlistView.showDescription(sp.toString());
+        if (!sp.toString().isEmpty())
+            this.playlistView.hideProgressbar();
     }
 
     private void loadCreatedBy() {
-        this.playlistView.showCreatedBy("Created by " + this.playlistCellItem.getCreator());
+        this.playlistView.showCreatedBy("Owner: " + this.playlistCellItem.getCreator());
     }
 
     private void loadTrackCount() {

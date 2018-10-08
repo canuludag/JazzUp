@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import com.github.ybq.android.spinkit.style.Wave
 import com.uludag.can.jazzup.R
 import com.uludag.can.jazzup.base.App
 import com.uludag.can.jazzup.ui.jazzplaylists.JazzPlaylistsActivity
@@ -29,6 +30,13 @@ class GetAccessActivity : AppCompatActivity(), GetAccessContract.View {
 
         setWhiteStatusBar(mainBackground)
         setClickListeners()
+        setupProgressBar()
+    }
+
+    private fun setupProgressBar() {
+        val waveProgressBar = Wave()
+        waveProgressBar.color = resources.getColor(R.color.accentTextColor)
+        this.progressBar.indeterminateDrawable = waveProgressBar
     }
 
     private fun setupPresenter() {

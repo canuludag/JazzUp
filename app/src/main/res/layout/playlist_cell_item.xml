@@ -20,7 +20,7 @@
         android:outlineAmbientShadowColor="@color/playlistItemShadowColor"
         android:outlineSpotShadowColor="@color/playlistItemShadowColor"
         android:shadowColor="@color/playlistItemShadowColor"
-        android:text="Jazz Classics"
+        tools:text="Jazz Classics"
         android:textSize="12sp"
         android:textStyle="normal"
         app:chipIcon="@drawable/ic_spotify_chip"
@@ -72,9 +72,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:maxLines="4"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/product_sans_family"
-                android:text="Celebrating the 50th birthday of MPS with a selection from their classic catalogue. Cover: Oscar Peterson"
+                tools:text="Celebrating the 50th birthday of MPS with a selection from their classic catalogue. Cover: Oscar Petersonadasdasdsadasdasasd"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/product_sans_family"
-                android:text="80 songs"
+                tools:text="80 songs"
                 android:textSize="14sp"
                 android:textStyle="normal"
                 app:layout_constraintBottom_toTopOf="@+id/playlistCreatedBy"
@@ -99,7 +101,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/product_sans_family"
-                android:text="Created by Spotify"
+                tools:text="Owner: Spotify"
                 android:textSize="14sp"
                 android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -129,6 +131,16 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:rippleColor="@color/colorPrimary" />
+
+            <ProgressBar
+                android:id="@+id/cellProgressbar"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:indeterminateTint="@color/accentTextColor"
+                app:layout_constraintStart_toEndOf="@+id/coverImage"
+                app:layout_constraintTop_toTopOf="parent" />
         </android.support.constraint.ConstraintLayout>
     </android.support.design.card.MaterialCardView>
 

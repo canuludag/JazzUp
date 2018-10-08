@@ -6,4 +6,5 @@ interface PlaylistView {
     fun showDescription(description: String)
     fun showTrackCount(count: String)
     fun showCreatedBy(creator: String)
+    fun hideProgressbar()
 }
