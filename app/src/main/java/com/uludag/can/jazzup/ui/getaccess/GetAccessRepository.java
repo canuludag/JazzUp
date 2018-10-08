@@ -1,6 +1,6 @@
 package com.uludag.can.jazzup.ui.getaccess;
 
-import com.uludag.can.jazzup.models.AccessToken;
+import com.uludag.can.jazzup.models.playlistswithcategory.AccessToken;
 import com.uludag.can.jazzup.networking.ApiService;
 import com.uludag.can.jazzup.networking.NetworkConstants;
 
@@ -12,12 +12,12 @@ import javax.inject.Inject;
 
 import io.reactivex.Single;
 
-public class Repository implements GetAccessContract.Model {
+public class GetAccessRepository implements GetAccessContract.Model {
 
     private ApiService apiService;
 
     @Inject
-    Repository(ApiService apiService) {
+    GetAccessRepository(ApiService apiService) {
         this.apiService = apiService;
     }
 

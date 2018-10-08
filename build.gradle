@@ -19,6 +19,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 
@@ -34,6 +35,8 @@ ext {
     okhttpVersion = '3.11.0'
     okhttpUrlConnectionVersion = '3.0.1'
     loggingInterceptorVersion = '3.9.0'
+    glideVersion = '4.8.0'
+    spinKitVersion = '1.1.0'
     rxJavaVersion = '2.2.2'
     rxAndroidVersion = '2.1.0'
     gsonVersion = '2.8.2'

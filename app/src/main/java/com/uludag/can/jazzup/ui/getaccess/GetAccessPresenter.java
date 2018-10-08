@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.uludag.can.jazzup.models.AccessToken;
+import com.uludag.can.jazzup.models.playlistswithcategory.AccessToken;
 
 import javax.inject.Inject;
 
@@ -18,11 +18,10 @@ import io.reactivex.schedulers.Schedulers;
 public class GetAccessPresenter implements GetAccessContract.Presenter {
 
     private static final String TAG = GetAccessPresenter.class.getSimpleName();
-    private GetAccessContract.View view;
-    private GetAccessContract.Model model;
     private CompositeDisposable compositeDisposable;
-
-    SharedPreferences prefs;
+    public GetAccessContract.View view;
+    public GetAccessContract.Model model;
+    public SharedPreferences prefs;
 
     @Inject
     public GetAccessPresenter(GetAccessContract.Model model, SharedPreferences prefs) {
@@ -59,7 +58,7 @@ public class GetAccessPresenter implements GetAccessContract.Presenter {
     private void getNewAccessToken() {
         this.view.showLoading();
         Single<AccessToken> accessTokenSingle = this.model.getAccessToken();
-        addToDisposableBag(accessTokenSingle.subscribeOn(Schedulers.io())
+        Disposable accessTokenDisposable = accessTokenSingle.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new DisposableSingleObserver<AccessToken>() {
                     @Override
@@ -72,7 +71,8 @@ public class GetAccessPresenter implements GetAccessContract.Presenter {
                     public void onError(Throwable e) {
                         Log.e(TAG, "onError: " + e.getMessage());
                     }
-                }));
+                });
+        addToDisposableBag(accessTokenDisposable);
     }
 
     private void saveToken(String accessToken) {
