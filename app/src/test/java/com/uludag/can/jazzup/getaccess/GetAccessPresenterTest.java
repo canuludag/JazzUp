@@ -2,7 +2,7 @@ package com.uludag.can.jazzup.getaccess;
 
 import android.content.SharedPreferences;
 
-import com.uludag.can.jazzup.models.AccessToken;
+import com.uludag.can.jazzup.models.playlistswithcategory.AccessToken;
 import com.uludag.can.jazzup.ui.getaccess.GetAccessContract;
 import com.uludag.can.jazzup.ui.getaccess.GetAccessPresenter;
 

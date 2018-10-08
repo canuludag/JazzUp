@@ -1,10 +1,10 @@
 
-package com.uludag.can.jazzup.models;
+package com.uludag.can.jazzup.models.playlistswithtracks;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ExternalUrls {
+public class ExternalUrls______ {
 
     @SerializedName("spotify")
     @Expose

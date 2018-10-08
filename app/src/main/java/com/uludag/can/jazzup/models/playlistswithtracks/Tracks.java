@@ -1,22 +1,18 @@
 
-package com.uludag.can.jazzup.models;
+package com.uludag.can.jazzup.models.playlistswithtracks;
 
+import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
-public class Playlists {
+public class Tracks {
 
     @SerializedName("href")
     @Expose
     private String href;
-    @SerializedName("playlistItems")
+    @SerializedName("items")
     @Expose
-    private List<PlaylistItem> playlistItems = null;
-    @SerializedName("limit")
-    @Expose
-    private Integer limit;
+    private List<Item> items = null;
     @SerializedName("next")
     @Expose
     private Object next;
@@ -38,20 +34,12 @@ public class Playlists {
         this.href = href;
     }
 
-    public List<PlaylistItem> getPlaylistItems() {
-        return playlistItems;
+    public List<Item> getItems() {
+        return items;
     }
 
-    public void setPlaylistItems(List<PlaylistItem> playlistItems) {
-        this.playlistItems = playlistItems;
-    }
-
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     public Object getNext() {

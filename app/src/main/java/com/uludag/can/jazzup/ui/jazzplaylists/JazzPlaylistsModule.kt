@@ -15,6 +15,6 @@ class JazzPlaylistsModule {
             JazzPlaylistsContract.Presenter = JazzPlaylistsPresenter(model, sharedPreferences)
 
     @Provides
-    fun provideRepository(apiService: ApiService): JazzPlaylistsContract.Model =
-            JazzPlaylistsRepository(apiService)
+    fun provideRepository(apiService: ApiService, sharedPreferences: SharedPreferences): JazzPlaylistsContract.Model =
+            JazzPlaylistsRepository(apiService, sharedPreferences)
 }

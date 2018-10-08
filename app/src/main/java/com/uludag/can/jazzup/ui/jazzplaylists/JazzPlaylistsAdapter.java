@@ -17,9 +17,14 @@ public class JazzPlaylistsAdapter extends RecyclerView.Adapter<PlaylistViewHolde
     public JazzPlaylistsAdapter() {
     }
 
-    public void setNotesPresenterList(List<PlaylistPresenter> presenterList) {
+    public void setPlaylistsPresenterList(List<PlaylistPresenter> presenterList) {
         this.playlistPresenterList = presenterList;
         notifyDataSetChanged();
+    }
+
+    public void updateData(int position, PlaylistPresenter playlistPresenter) {
+        this.playlistPresenterList.set(position, playlistPresenter);
+        notifyItemChanged(position);
     }
 
     @NonNull
@@ -32,10 +37,10 @@ public class JazzPlaylistsAdapter extends RecyclerView.Adapter<PlaylistViewHolde
 
     @Override
     public void onBindViewHolder(@NonNull PlaylistViewHolder holder, int position) {
-        /*PlaylistPresenter playlistPresenter = this.playlistPresenterList.get(position);
+        PlaylistPresenter playlistPresenter = this.playlistPresenterList.get(position);
         holder.setPresenter(playlistPresenter);
         playlistPresenter.setView(holder);
-        playlistPresenter.loadData();*/
+        playlistPresenter.loadData();
     }
 
     @Override
@@ -43,6 +48,6 @@ public class JazzPlaylistsAdapter extends RecyclerView.Adapter<PlaylistViewHolde
         if (this.playlistPresenterList != null && !this.playlistPresenterList.isEmpty())
             return this.playlistPresenterList.size();
         else
-            return 5;
+            return 0;
     }
 }

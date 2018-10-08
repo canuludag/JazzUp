@@ -2,6 +2,7 @@
 
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorPrimary">
@@ -55,7 +56,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/coverImage"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:adjustViewBounds="true"
@@ -77,8 +78,19 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toEndOf="@+id/coverImage"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/playlistTrackCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/product_sans_family"
+                android:text="80 songs"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toTopOf="@+id/playlistCreatedBy"
+                app:layout_constraintStart_toStartOf="@+id/playlistCreatedBy" />
 
             <TextView
                 android:id="@+id/playlistCreatedBy"
@@ -88,10 +100,10 @@
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/product_sans_family"
                 android:text="Created by Spotify"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView" />
+                app:layout_constraintStart_toEndOf="@+id/coverImage" />
 
             <android.support.design.button.MaterialButton
                 android:id="@+id/btnPlayPlaylist"
@@ -105,7 +117,7 @@
                 android:shadowColor="@color/accentTextColor"
                 android:text="PLAY"
                 android:textColor="@color/accentTextColor"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:chipStrokeColor="@color/colorAccent"
                 app:chipStrokeWidth="0.8dp"

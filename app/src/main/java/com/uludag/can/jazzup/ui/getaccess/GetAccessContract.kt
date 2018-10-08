@@ -1,6 +1,6 @@
 package com.uludag.can.jazzup.ui.getaccess
 
-import com.uludag.can.jazzup.models.AccessToken
+import com.uludag.can.jazzup.models.playlistswithcategory.AccessToken
 import io.reactivex.Single
 
 interface GetAccessContract {
