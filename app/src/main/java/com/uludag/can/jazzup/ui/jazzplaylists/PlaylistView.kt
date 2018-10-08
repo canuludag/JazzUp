@@ -7,4 +7,5 @@ interface PlaylistView {
     fun showTrackCount(count: String)
     fun showCreatedBy(creator: String)
     fun hideProgressbar()
+    fun openOnSpotify(id: String)
 }

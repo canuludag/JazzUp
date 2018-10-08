@@ -50,6 +50,10 @@ public class PlaylistPresenter {
     }
 
     public PlaylistCellItem getPlaylistCellItem() {
-        return playlistCellItem;
+        return this.playlistCellItem;
+    }
+
+    public void playOnSpotify() {
+        this.playlistView.openOnSpotify(this.playlistCellItem.getId());
     }
 }

@@ -139,6 +139,7 @@ public class JazzPlaylistsPresenter implements JazzPlaylistsContract.Presenter {
     @NonNull
     private PlaylistPresenter createPlaylistPresenter(PlaylistWithTracks playlistWithTracks, PlaylistPresenter playlistPresenter) {
         playlistPresenter.getPlaylistCellItem().setDescription(playlistWithTracks.getDescription());
+        playlistPresenter.getPlaylistCellItem().setExternalUrl(playlistWithTracks.getExternalUrls().getSpotify());
         return playlistPresenter;
     }
 
