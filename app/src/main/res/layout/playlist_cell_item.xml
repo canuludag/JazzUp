@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimary">
+    android:background="@drawable/playlist_gradient_background">
 
     <android.support.design.chip.Chip
         android:id="@+id/playlistTitle"
@@ -17,6 +17,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/product_sans_family"
         android:gravity="center"
+        android:clickable="false"
         android:outlineAmbientShadowColor="@color/playlistItemShadowColor"
         android:outlineSpotShadowColor="@color/playlistItemShadowColor"
         android:shadowColor="@color/playlistItemShadowColor"

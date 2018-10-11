@@ -1,10 +1,23 @@
 Jazzup
 --------------------
-Tech Stack: Java+Kotlin/MVP Architecture/Dagger2/RxJava2/Mockito/Material Components
+This is a demonstration project that uses Spotify API to list Jazz playlists and enable user to listen a playlist on Spotify application. In order to run, you need to get a client id and client secret keys from Spotify and place these values into `key.properties` file.
+To access the playlists and other details in Spotify API, I've used **Client Credentials Flow** and it requires to refresh access token in every `3600 seconds`.
+
+    Authoriztion Endpoint
+    POST https://accounts.spotify.com/api/token
+
+Main Tech Stack
+--------------------
+ - Java + Kotlin
+ -  MVP Architecture
+ -  Dagger 2
+ -  RxJava 2 + RxAndroid
+ -  Mockito
+ -  Material Components
 
 Demo
 ----
-![](./art/art_demo_1.png) ![](./art/art_demo_2.png) 
+![](./art/art_demo_1.png) ![](./art/art_demo_2.png)
 
 ![](./art/art_demo_3.png) ![](./art/art_demo_4.png)
 
@@ -13,7 +26,7 @@ Developed By
 * Can Uludağ
 * cucanuludag@gmail.com
 * https://www.linkedin.com/in/canuludag/
- 
+
 License
 ----------
     Copyright 2018 Can Uludağ

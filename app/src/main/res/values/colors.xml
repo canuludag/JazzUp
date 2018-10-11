@@ -7,4 +7,7 @@
     <color name="accentTextColor">#53383a</color>
     <color name="shadowColor">#ff8762</color>
     <color name="playlistItemShadowColor">#c7451c</color>
+    <color name="colorPlaylistBgPinkStart">#84fff1ed</color>
+    <color name="colorPlaylistBgGreenStart">#cce1f5f2</color>
+
 </resources>
